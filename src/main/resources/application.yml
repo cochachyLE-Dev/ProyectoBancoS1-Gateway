@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    config:
+      password: password.
+      username: user
+  config:
+    import: configserver:http://localhost:8888  
+info:
+  app:
+    name: ${spring.application.name}
+    version: 1.0.0
+    description: '...'
+  author: Luis Eduardo Cochachi Chamorro
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  info:
+    env:
+      enabled: true
